@@ -26,10 +26,9 @@
 	</beans:bean>
 	
 	<!-- Declara componentes que serão verificados pelo Spring-->
-	<context:component-scan base-package="br.com.estoquemary.controllers" />
-<!-- 	<context:component-scan base-package="br.com.estoquemary.models" /> -->
-	<context:component-scan base-package="br.com.estoquemary.services" />
-	<context:component-scan base-package="br.com.estoquemary.repositories" />
+	<context:component-scan base-package="com.stockmanager.controllers" />
+	<context:component-scan base-package="com.stockmanager.services" />
+	<context:component-scan base-package="com.stockmanager.repositories" />
 	
 	<beans:bean class="java.lang.String" id="dbHost">
 		<beans:constructor-arg
@@ -50,7 +49,7 @@
 	<!-- ********** Configuration Datasource Connection *********************************** -->
 	<beans:bean id="dsProducao" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<beans:property name="url" value="jdbc:mysql://#{@dbHost}:#{@dbPort}/estoquemary?autoReconnect=true" />
+		<beans:property name="url" value="jdbc:mysql://#{@dbHost}:#{@dbPort}/stockmanager?autoReconnect=true" />
 		<beans:property name="username" value="#{@dbUser}" />
 		<beans:property name="password" value="#{@dbPass}" />
 	</beans:bean>
@@ -78,7 +77,7 @@
     
      <!-- ********** Configuration Spring Data ************************************************** -->
     <beans:bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
-    <jpa:repositories base-package="br.com.estoquemary.repositories"
+    <jpa:repositories base-package="com.stockmanager.repositories"
                       entity-manager-factory-ref="entityManagerFactory"
                       transaction-manager-ref="transactionManager"/>  
 	
