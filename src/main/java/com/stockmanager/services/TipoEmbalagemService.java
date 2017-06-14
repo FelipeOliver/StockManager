@@ -23,7 +23,7 @@ public class TipoEmbalagemService {
 		return saved;
 	}
 	
-	public void delete(TipoEmbalagem tipoEmbalagem){
-		this.tipoEmbalagemRepository.delete(tipoEmbalagem);
+	public void delete(Long id){
+		this.tipoEmbalagemRepository.delete(id);
 	}
 }
