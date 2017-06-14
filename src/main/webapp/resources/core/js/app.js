@@ -1,3 +1,3 @@
-var app = angular.module('EstoqueMaryApp', [ ]);
+var app = angular.module('StockManager', [ ]);
 
-var SERVER_APP = '/estoquemary';
+var SERVER_APP = '/stockmanager';

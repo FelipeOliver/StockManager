@@ -25,69 +25,30 @@
 
 	</head>
 
-  <body class="skin-blue fixed">
-    <!-- Site wrapper -->
-    <div class="wrapper">
-      
-      	<!-- Navigator -->
-	  	<c:import url="menu_superior.jsp"></c:import>
-      	<!-- =============================================== -->
+	<body class="skin-blue fixed" data-ng-app="StockManager">
 
-      	<!-- Left side column. contains the sidebar -->
-		<c:import url="menu_lateral.jsp"></c:import>
-
-     	<!-- =============================================== -->
-
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            Fixed Layout
-            <small>Blank example to the fixed layout</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Examples</a></li>
-            <li class="active">Blank page</li>
-          </ol>
-        </section>
-
-        <!-- Main content -->
-        <section class="content">
-          <div class="callout callout-info">
-            <h4>Tip!</h4>
-            <p>Add the fixed class to the body tag to get this layout. The fixed layout is your best option if your sidebar is bigger than your content because it prevents extra unwanted scrolling.</p>
-          </div>
-          <!-- Default box -->
-          <div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title">Title</h3>
-              <div class="box-tools pull-right">
-                <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
-                <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              Start creating your amazing application!
-            </div><!-- /.box-body -->
-            <div class="box-footer">
-              Footer
-            </div><!-- /.box-footer-->
-          </div><!-- /.box -->
-
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
-
-      <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 0.0.1
-        </div>
-        <strong>Copyright &copy; 2017-2018.</strong> All rights reserved.
-      </footer>
-    </div><!-- ./wrapper -->
-		
-		
+	    <!-- Site wrapper -->
+	    <div class="wrapper">
+	      
+	      	<!-- Navigator -->
+		  	<c:import url="core/menu_superior.jsp"></c:import>
+	      	<!-- =============================================== -->
+	
+	      	<!-- Left side column. contains the sidebar -->
+			<c:import url="core/menu_lateral.jsp"></c:import>
+	     	<!-- =============================================== -->
+	
+			<!-- Content Wrapper. Contains page content -->
+			<c:if test="${not empty content_import}">
+				<c:import url="${content_import}"></c:import>
+			</c:if>
+	     	<!-- =============================================== -->
+			
+			<!-- Footer -->
+			<c:import url="core/footer.jsp"></c:import>
+	     	<!-- =============================================== -->
+	
+	    </div><!-- ./wrapper -->		
 	
 	</body>
 
@@ -97,11 +58,19 @@
     <script src="${pageContext.request.contextPath}/resources/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- SlimScroll -->
     <script src="${pageContext.request.contextPath}/resources/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <!-- FastClick -->
-<!--     <script src='../../plugins/fastclick/fastclick.min.js'></script> -->
     <!-- AdminLTE App -->
     <script src="${pageContext.request.contextPath}/resources/plugins/template/js/app.min.js" type="text/javascript"></script>
-    <!-- AdminLTE for demo purposes -->
-<!--     <script src="../../dist/js/demo.js" type="text/javascript"></script> -->
+	 <!-- DATA TABES SCRIPT -->
+    <script src="${pageContext.request.contextPath}/resources/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/resources/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+	<!-- Angular 1.2.19 -->
+    <script src="${pageContext.request.contextPath}/resources/plugins/angularJs/angular.js"></script>
+	
+	<!-- AngularApp -->
+    <script src="${pageContext.request.contextPath}/resources/core/js/app.js"></script>
+    <!-- Services -->
+    <script src="${pageContext.request.contextPath}/resources/core/js/services/categoria.service.js"></script>
+    <!-- Controllers -->
+    <script src="${pageContext.request.contextPath}/resources/core/js/controllers/categoria.controller.js"></script>
 	
 </html>

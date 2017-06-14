@@ -5,18 +5,26 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
-			Bem-vindo!
-			<small>Página Inicial</small>
+			Produtos em estoque
+			<small>Adicionar</small>
 		</h1>
 		<ol class="breadcrumb">
-			<li class="active"><a href="#"><i class="fa fa-house"></i> Página inicial</a></li>
+			<li><a href="#"><i class="fa fa-dashboard"></i> Produtos em Estoque</a></li>
+			<li class="active">Adicionar</li>
+			<!--             <li><a href="#">Examples</a></li> -->
+			<!--             <li class="active">Blank page</li> -->
 		</ol>
 	</section>
 		
 	<!-- Main content -->
 	<section class="content">
-		<div class="callout callout-info">
-			Sistema de controle de Estoque
+		<div class="box box-warning">
+			<div class="box-header">
+			
+			</div>
+			<div class="box-body">
+			
+			</div>
 		</div>
 	</section><!-- /.content -->
 </div><!-- /.content-wrapper -->
