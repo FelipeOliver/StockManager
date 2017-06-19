@@ -4,13 +4,17 @@ app.controller('TipoEmbalagemController', ['TipoEmbalagemService', function(Tipo
 	self.tipos = [];
 	self.tipoEmbalagem  = {};
 	
-	/*Método que carrega os dados iniciais na tela*/
+	/************************************************
+	* Método que carrega os dados iniciais na tela  *
+	************************************************/
 	var _init = function(){
 		self.atualizaLista();
 	}
 	
-	/*Salva o Tipo de Embalagem caso já tenha sido criada, se não foi 
-	 * criada ainda cria ela na base e gera um ID*/
+	/********************************************************************	
+	* Salva o Tipo de Embalagem caso já tenha sido criada, se não foi   * 
+	* criada ainda cria ela na base e gera um ID					    *
+	********************************************************************/
 	self.save = function(){
 		TipoEmbalagemService.save(self.tipoEmbalagem)
 		.then(function(resp){
@@ -21,7 +25,9 @@ app.controller('TipoEmbalagemController', ['TipoEmbalagemService', function(Tipo
 		})
 	}
 	
-	/*Deleta o tipo de embalagem e atualiza a lista*/
+	/*************************************************
+	* Deleta o tipo de embalagem e atualiza a lista  * 
+	*************************************************/
 	self.delete = function(){
 		TipoEmbalagemService.delete(self.tipoEmbalagem.id)
 		.then(function(resp){
@@ -32,7 +38,9 @@ app.controller('TipoEmbalagemController', ['TipoEmbalagemService', function(Tipo
 		})
 	}
 	
-	/*Atualiza a lista com os tipos de Embalagem que já foram salvas*/
+	/****************************************************************** 
+	* Atualiza a lista com os tipos de Embalagem que já foram salvas  *
+	******************************************************************/
 	self.atualizaLista = function(){
 		TipoEmbalagemService.findAll()
 		.then(function(resp){
@@ -42,13 +50,17 @@ app.controller('TipoEmbalagemController', ['TipoEmbalagemService', function(Tipo
 		});		
 	}
 	
-	/*Método que informa se o registro pode ser apagado*/
+	/****************************************************
+	* Método que informa se o registro pode ser apagado * 
+	****************************************************/
 	self.podeSerDeletado = function(){
 		var idDiferenteNulo = self.tipoEmbalagem.id != null && self.tipoEmbalagem.id != undefined && self.tipoEmbalagem.id != '';
 		return idDiferenteNulo;
 	}
 	
-	/*Método que pega o registro da tabela e coloca no form de alteração*/
+	/*********************************************************************
+	* Método que pega o registro da tabela e coloca no form de alteração *
+	*********************************************************************/
 	self.edit = function(tipoEmbalagem){
 		self.tipoEmbalagem = Object.assign({}, tipoEmbalagem);
 	}

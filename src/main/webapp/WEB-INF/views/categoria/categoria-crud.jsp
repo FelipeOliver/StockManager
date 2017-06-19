@@ -9,7 +9,7 @@
 			<small>Adicionar</small>
 		</h1>
 		<ol class="breadcrumb">
-			<li><a href="#"><i class="fa fa-dashboard"></i> Cadastros</a></li>
+			<li><a href="#"><i class="fa fa-edit"></i> Cadastros</a></li>
 			<li class="active">Categoria</li>
 			<!--             <li><a href="#">Examples</a></li> -->
 			<!--             <li class="active">Blank page</li> -->

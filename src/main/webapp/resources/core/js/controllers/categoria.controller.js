@@ -4,13 +4,17 @@ app.controller('CategoriaController', ['CategoriaService', function(CategoriaSer
 	self.categorias = [];
 	self.categoria  = {};
 	
-	/*Método que carrega os dados iniciais na tela*/
+	/*********************************************** 
+	* Método que carrega os dados iniciais na tela *
+	***********************************************/
 	var _init = function(){
 		self.atualizaLista();
 	}
 	
-	/*Salva a categoria caso já tenha sido criada, se não foi 
-	 * criada ainda cria ela na base e gera um ID*/
+	/**********************************************************
+	* Salva a categoria caso já tenha sido criada, se não foi *
+	* criada ainda cria ela na base e gera um ID              *
+	**********************************************************/
 	self.save = function(){
 		CategoriaService.save(self.categoria)
 		.then(function(resp){
@@ -21,7 +25,9 @@ app.controller('CategoriaController', ['CategoriaService', function(CategoriaSer
 		})
 	}
 	
-	/*Deleta a categoria e atualiza a lista*/
+	/****************************************
+	* Deleta a categoria e atualiza a lista *
+	****************************************/
 	self.delete = function(){
 		CategoriaService.delete(self.categoria.id)
 		.then(function(resp){
@@ -32,7 +38,9 @@ app.controller('CategoriaController', ['CategoriaService', function(CategoriaSer
 		})
 	}
 	
-	/*Atualiza a lista com as categorias que já foram salvas*/
+	/*********************************************************
+	* Atualiza a lista com as categorias que já foram salvas *
+	*********************************************************/
 	self.atualizaLista = function(){
 		CategoriaService.findAll()
 		.then(function(resp){
@@ -42,13 +50,17 @@ app.controller('CategoriaController', ['CategoriaService', function(CategoriaSer
 		});		
 	}
 	
-	/*Método que informa se o registro pode ser apagado*/
+	/****************************************************
+	* Método que informa se o registro pode ser apagado *
+	****************************************************/
 	self.podeSerDeletado = function(){
 		var idDiferenteNulo = self.categoria.id != null && self.categoria.id != undefined && self.categoria.id != '';
 		return idDiferenteNulo;
 	}
 	
-	/*Método que pega o registro da tabela e coloca no form de alteração*/
+	/********************************************************************** 
+	 * Método que pega o registro da tabela e coloca no form de alteração * 
+	 *********************************************************************/
 	self.edit = function(categoria){
 		self.categoria = Object.assign({}, categoria);
 	}

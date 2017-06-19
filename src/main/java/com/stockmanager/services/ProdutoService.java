@@ -17,8 +17,7 @@ public class ProdutoService {
 		return saved;
 	}
 	
-	public void delete(Produto produto){
-		
-		this.produtoRepository.delete(produto);
+	public void delete(Long id){
+		this.produtoRepository.delete(id);
 	}
 }

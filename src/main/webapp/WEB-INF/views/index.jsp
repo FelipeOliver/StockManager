@@ -71,7 +71,9 @@
     <!-- Services -->
     <script src="${pageContext.request.contextPath}/resources/core/js/services/categoria.service.js"></script>
     <script src="${pageContext.request.contextPath}/resources/core/js/services/tipo.embalagem.service.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/core/js/services/produto.service.js"></script>
     <!-- Controllers -->
+    <script src="${pageContext.request.contextPath}/resources/core/js/controllers/produto.add.controller.js"></script>
     <script src="${pageContext.request.contextPath}/resources/core/js/controllers/categoria.controller.js"></script>
     <script src="${pageContext.request.contextPath}/resources/core/js/controllers/tipo.embalagem.controller.js"></script>
 	
