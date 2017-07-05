@@ -1,5 +1,7 @@
 package com.stockmanager.controllers;
 
+import java.util.List;
+
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -49,6 +51,16 @@ public class ProdutoRestController {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@RequestMapping(value="/findall")
+	public ResponseEntity<String> findAll(){
+		try{
+			List<Produto> list = this.produtoService.findAll();
+			return new ResponseEntity<String>(new ObjectMapper().writeValueAsString(list ), HttpStatus.OK);
+		}catch (Exception e) {
+			return new ResponseEntity<String>( e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	

@@ -1,6 +1,8 @@
 package com.stockmanager.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -8,16 +10,16 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Produto {
 
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long codigo;
 
 	private String descricao;
 
-	@ManyToOne(targetEntity = Categoria.class)
-	@JoinColumn(name = "categoria_id", referencedColumnName="id",nullable=true)
+	@ManyToOne(targetEntity = Categoria.class, optional=true)
+	@JoinColumn(name = "categoria_id", referencedColumnName="id", nullable=true)
 	private Categoria categoria;
 
-	@ManyToOne(targetEntity = TipoEmbalagem.class)
+	@ManyToOne(targetEntity = TipoEmbalagem.class, optional=true)
 	@JoinColumn(name = "tipo_embalagem_id", referencedColumnName="id", nullable=true)	
 	private TipoEmbalagem tipoDeEmbalagem;
 

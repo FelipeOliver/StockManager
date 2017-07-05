@@ -1,5 +1,7 @@
 package com.stockmanager.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +21,9 @@ public class ProdutoService {
 	
 	public void delete(Long id){
 		this.produtoRepository.delete(id);
+	}
+
+	public List<Produto> findAll() {
+		return (List<Produto>) this.produtoRepository.findAll();
 	}
 }

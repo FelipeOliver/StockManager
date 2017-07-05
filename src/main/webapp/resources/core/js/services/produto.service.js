@@ -8,11 +8,17 @@ app.factory('ProdutoService', ['$http', function($http){
 		return $http.get(SERVER_APP + '/produto/delete/' + id);
 	}
 	
+	var _findAll = function(){
+		return $http.get(SERVER_APP + '/produto/findall');
+	}
+	
 	return {
 		
 		save: _save,
 		
-		delete: _delete
+		delete: _delete,
+		
+		findAll: _findAll
 		
 	}
 }])
